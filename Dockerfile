@@ -4,7 +4,8 @@ WORKDIR /app
 COPY . .
 RUN cargo build --release
 
-FROM debian:bullseye-slim
+# Use Ubuntu 22.04 as base image which has newer GLIBC
+FROM ubuntu:22.04
 WORKDIR /app
 
 # Install required dependencies
